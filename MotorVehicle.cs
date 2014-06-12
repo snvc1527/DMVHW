@@ -8,78 +8,88 @@ namespace DMV_GUI
 {
     abstract class MotorVehicle : IComparable<MotorVehicle>
     {
+
+        private string vin;
         string VIN
         {
-            get { return VIN; }
-            set {
-            if(value.Length > 17) {
-                throw new Exception();
-            }
-            else {
-            VIN = value;
+            get { return vin; }
+            set
+            {
+                if (value.Length > 17)
+                {
+                    throw new Exception("The lenght value is bigger then 17 please try again");
+                }
+                else
+                {
+                    vin = value;
+                }
             }
         }
-        }
+        private string MAKE;
         string make
         {
-            get { return make; }
+            get { return MAKE; }
             set
             {
                 if (value.Length > 15)
                 {
-                    throw new Exception();
+                    throw new Exception("The lenght value is bigger then 15 please try again");
                 }
                 else
                 {
-                    make = value;
+                    MAKE = value;
                 }
             }
         }
+        private string MODEL;
         string model
         {
-            get { return model; }
+            get { return MODEL; }
             set
             {
                 if (value.Length > 15)
                 {
-                    throw new Exception();
+                    throw new Exception("The lenght value is bigger then 15 please try again");
                 }
                 else
                 {
-                    model = value;
+                    MODEL = value;
                 }
             }
         }
         DateTime dateOfProduction;
+
+        private int NOOFWHEELS;
         protected int noOfWheels
         {
-            get { return noOfWheels; }
+            get { return NOOFWHEELS; }
             set
             {
 
-                if (Convert.ToString(noOfWheels).Length > 6)
+                if (Convert.ToString(NOOFWHEELS).Length > 6)
                 {
-                    throw new Exception();
+                    throw new Exception("The lenght value is bigger then 6 please try again and input the right value");
                 }
                 else
                 {
-                    noOfWheels = value;
+                    NOOFWHEELS = value;
                 }
             }
         }
+        private int NOOFSEATS;
         protected int noOfSeats
         {
-            get { return noOfSeats; }
+            get { return NOOFSEATS; }
             set
             {
 
-                if (Convert.ToString(noOfSeats).Length <= 1)
+                if (Convert.ToString(NOOFSEATS).Length < 1)
                 {
-                    throw new Exception();
+                    throw new Exception("The lenght value is smaller then 1 please try again and input the right value");
                 }
                 else
                 {
-                    noOfSeats = value;
+                    NOOFSEATS = value;
                 }
             }
         }
